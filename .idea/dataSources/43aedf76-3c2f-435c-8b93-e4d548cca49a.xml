@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="dbk3n86b2nnnvj@ec2-54-221-229-64.compute-1.amazonaws.com">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.0">
+    <root id="1"/>
+    <database id="2" parent="1" name="dbk3n86b2nnnvj">
+      <ObjectId>684326</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-11-06.16:03:07.574</IntrospectionTimestamp>
+      <IntrospectionStateNumber>141505075</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>13003</ObjectId>
+    </schema>
+    <table id="9" parent="3" name="card">
+      <ObjectId>2993915</ObjectId>
+      <StateNumber>141505075</StateNumber>
+    </table>
+    <column id="10" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>141505075</StateNumber>
+    </column>
+    <index id="11" parent="9" name="card_pkey">
+      <ObjectId>2993918</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="12" parent="9" name="card_pkey">
+      <ObjectId>2993919</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>card_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
