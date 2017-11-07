@@ -1,6 +1,0 @@
-cardgame\ServletInitializer.class
-cardgame\controller\TestController.class
-cardgame\controller\UserController.class
-cardgame\bean\Card.class
-cardgame\CardgameApplication.class
-cardgame\bean\User.class
