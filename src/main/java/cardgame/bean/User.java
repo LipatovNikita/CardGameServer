@@ -2,9 +2,9 @@ package cardgame.bean;
 
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.security.core.GrantedAuthority;
+/*import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UserDetailsService;*/
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import java.util.UUID;
 @Data
 @Entity
 @Table(name = "users")
-public class User implements UserDetails  {
+public class User /*implements UserDetails*/  {
 
     @Id
     @GeneratedValue(generator = "UUID")
@@ -35,7 +35,7 @@ public class User implements UserDetails  {
     @Column(name = "isActive", nullable = false)
     private boolean isActive;
 
-    @Override
+   /* @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<>();
         return authorities;
@@ -59,5 +59,5 @@ public class User implements UserDetails  {
     @Override
     public boolean isEnabled() {
         return isActive;
-    }
+    }*/
 }
