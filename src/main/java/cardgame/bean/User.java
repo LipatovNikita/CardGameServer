@@ -1,8 +1,10 @@
 package cardgame.bean;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,10 +14,12 @@ import java.util.UUID;
 
 @Data
 @Entity
-@Table(name = "user")
-public class User implements UserDetails {
+@Table(name = "users")
+public class User implements UserDetails  {
 
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     @Column(name = "id", nullable = false)
     private String id;
 
@@ -30,11 +34,6 @@ public class User implements UserDetails {
 
     @Column(name = "isActive", nullable = false)
     private boolean isActive;
-
-    @PrePersist
-    public void autofill() {
-        this.setId(UUID.randomUUID().toString());
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
