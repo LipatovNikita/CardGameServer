@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    public String registrationUser(/*@RequestBody User user*/) {
-        System.err.println("Hello, logs!");
+    public String registrationUser(@RequestBody String request) {
+        System.err.println(request);
         return "test";
     }
 }
