@@ -3,6 +3,7 @@ cardgame\bean\BaseEntity.class
 cardgame\ServletInitializer.class
 cardgame\CardgameApplication.class
 cardgame\repository\UserRepository.class
+cardgame\bean\Deck.class
 cardgame\FirebaseConfig.class
 cardgame\controller\UserController.class
 cardgame\bean\Card.class
