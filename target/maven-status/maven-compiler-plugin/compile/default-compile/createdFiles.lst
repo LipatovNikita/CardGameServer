@@ -1,10 +1,12 @@
 cardgame\repository\CardRepository.class
-cardgame\FirebaseConfig.class
 cardgame\bean\BaseEntity.class
 cardgame\ServletInitializer.class
-cardgame\controller\UserController.class
-cardgame\bean\Card.class
 cardgame\CardgameApplication.class
 cardgame\repository\UserRepository.class
+cardgame\FirebaseConfig.class
+cardgame\controller\UserController.class
+cardgame\bean\Card.class
 cardgame\bean\UserCard.class
+cardgame\service\impl\UserServiceImpl.class
+cardgame\service\UserService.class
 cardgame\bean\User.class

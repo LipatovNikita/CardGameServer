@@ -1,9 +1,11 @@
 C:\Programming\Projects\JavaProjects\JavaSE\cardgame\src\main\java\cardgame\bean\Card.java
 C:\Programming\Projects\JavaProjects\JavaSE\cardgame\src\main\java\cardgame\FirebaseConfig.java
+C:\Programming\Projects\JavaProjects\JavaSE\cardgame\src\main\java\cardgame\service\impl\UserServiceImpl.java
 C:\Programming\Projects\JavaProjects\JavaSE\cardgame\src\main\java\cardgame\bean\BaseEntity.java
 C:\Programming\Projects\JavaProjects\JavaSE\cardgame\src\main\java\cardgame\CardgameApplication.java
 C:\Programming\Projects\JavaProjects\JavaSE\cardgame\src\main\java\cardgame\ServletInitializer.java
 C:\Programming\Projects\JavaProjects\JavaSE\cardgame\src\main\java\cardgame\bean\User.java
+C:\Programming\Projects\JavaProjects\JavaSE\cardgame\src\main\java\cardgame\service\UserService.java
 C:\Programming\Projects\JavaProjects\JavaSE\cardgame\src\main\java\cardgame\bean\UserCard.java
 C:\Programming\Projects\JavaProjects\JavaSE\cardgame\src\main\java\cardgame\repository\CardRepository.java
 C:\Programming\Projects\JavaProjects\JavaSE\cardgame\src\main\java\cardgame\repository\UserRepository.java
