@@ -1,7 +1,10 @@
 package cardgame.service;
 
-/**
- * Created by NikitaLipatov on 03.12.2017.
- */
+
+import cardgame.bean.User;
+
 public interface UserService {
+    User registerUser(User user);
+    User getUserByEmail(User user);
+    User editUser(User user);
 }
