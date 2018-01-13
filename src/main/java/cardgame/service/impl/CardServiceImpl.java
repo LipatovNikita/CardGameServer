@@ -28,6 +28,11 @@ public class CardServiceImpl implements CardService {
     }
 
     @Override
+    public List<Card> getCardLeaderKit() {
+        return cardRepository.findCardsByIsLeaderAndIsActive(true, true);
+    }
+
+    @Override
     public List<Card> getCardList() {
         return cardRepository.findAll();
     }

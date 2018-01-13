@@ -19,6 +19,9 @@ public class Card extends BaseEntity {
     @Column(name = "rarity", nullable = false)
     private String rarity;
 
+    @Column(name = "isLeader", nullable = false)
+    private boolean isLeader;
+
     @Column(name = "isActive", nullable = false)
     private boolean isActive;
 }

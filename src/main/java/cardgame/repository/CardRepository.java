@@ -13,4 +13,6 @@ public interface CardRepository extends JpaRepository<Card, String> {
 
     @Query("SELECT card FROM Card card WHERE card.id IN :cardGuids")
     List<Card> findCardsByGuids(@Param("cardGuids") String[] cardGuids);
+
+    List<Card> findCardsByIsLeaderAndIsActive(boolean isLeader, boolean isActive);
 }

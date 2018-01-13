@@ -17,6 +17,10 @@ public class Deck extends BaseEntity {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "cardleader_id")
+    private Card leader;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "deck_card",
             joinColumns = @JoinColumn(name = "deck_id"),

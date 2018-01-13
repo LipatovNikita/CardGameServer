@@ -35,6 +35,7 @@ public class CollectionController {
             cards = cardService.getCardList();
         } catch (Exception exception) {
             LOGGER.error("Error getting card collection");
+            exception.printStackTrace();
         }
         return cards;
     }
@@ -50,6 +51,7 @@ public class CollectionController {
             cards = findUser.getCards();
         } catch (Exception exception) {
             LOGGER.error("Error getting user card collection");
+            exception.printStackTrace();
         }
         return cards;
     }

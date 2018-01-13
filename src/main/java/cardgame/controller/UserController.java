@@ -44,7 +44,7 @@ public class UserController {
         return user;
     }
 
-    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    @RequestMapping(value = "/profile", method = RequestMethod.POST)
     public User getUserData(@RequestBody String request) {
         User user = new User();
         try {
