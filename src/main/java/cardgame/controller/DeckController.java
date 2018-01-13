@@ -52,6 +52,10 @@ public class DeckController {
             request = new String(request.getBytes("UTF-8"));
             ObjectMapper objectMapper = new ObjectMapper();
             deck = objectMapper.readValue(request, Deck.class);
+            User user = userService.getUserByEmail(deck.getUser());
+            Card leader = cardService.getCardById(deck.getLeader());
+            deck.setUser(user);
+            deck.setLeader(leader);
             deck = deckService.createDeck(deck);
         } catch (Exception exception) {
             LOGGER.error("Error during deck create process");
@@ -82,10 +86,10 @@ public class DeckController {
             request = new String(request.getBytes("UTF-8"));
             ObjectMapper objectMapper = new ObjectMapper();
             Deck requestDeck = objectMapper.readValue(request, Deck.class);
-            User user = new User();
-            user.setUsername(requestDeck.getUser().getUsername());
+            User user = userService.getUserByEmail(requestDeck.getUser());
             deck = deckService.getUserDeck(user, requestDeck);
-            deck.setCards(requestDeck.getCards());
+            List<Card> cards = cardService.getCardListFromDeck(requestDeck.getCards());
+            deck.setCards(cards);
             deckService.editDeck(deck);
         } catch (Exception exception) {
             LOGGER.error("Error during editing deck data");

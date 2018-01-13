@@ -7,6 +7,7 @@ import cardgame.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -35,5 +36,19 @@ public class CardServiceImpl implements CardService {
     @Override
     public List<Card> getCardList() {
         return cardRepository.findAll();
+    }
+
+    @Override
+    public Card getCardById(Card card) {
+        return cardRepository.findOne(card.getId());
+    }
+
+    @Override
+    public List<Card> getCardListFromDeck(List<Card> cards) {
+        List<Card> findCards = new ArrayList<>();
+        for (Card card : cards) {
+            findCards.add(cardRepository.findOne(card.getId()));
+        }
+        return findCards;
     }
 }
