@@ -56,6 +56,7 @@ public class DeckController {
             Card leader = cardService.getCardById(deck.getLeader());
             deck.setUser(user);
             deck.setLeader(leader);
+            deck.setActive(true);
             deck = deckService.createDeck(deck);
         } catch (Exception exception) {
             LOGGER.error("Error during deck create process");

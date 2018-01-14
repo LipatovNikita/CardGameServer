@@ -25,9 +25,6 @@ public class User extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "card_id"))
     private List<Card> cards;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Deck> decks;
-
     @Column(name = "isActive", nullable = false)
     private boolean isActive = true;
 }
