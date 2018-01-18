@@ -98,4 +98,20 @@ public class DeckController {
         }
         return deck;
     }
+
+    @RequestMapping(value = "/userDeck", method = RequestMethod.POST)
+    public Deck getUserDeck(@RequestBody String request) {
+        Deck deck = new Deck();
+        try {
+            request = new String(request.getBytes("UTF-8"));
+            ObjectMapper objectMapper = new ObjectMapper();
+            Deck requestDeck = objectMapper.readValue(request, Deck.class);
+            User user = userService.getUserByEmail(requestDeck.getUser());
+            deck = deckService.getUserDeck(user, requestDeck);
+        } catch (Exception exception) {
+            LOGGER.error("Error getting user deck");
+            exception.printStackTrace();
+        }
+        return deck;
+    }
 }
