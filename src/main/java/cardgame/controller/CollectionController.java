@@ -65,7 +65,7 @@ public class CollectionController {
             ObjectMapper objectMapper = new ObjectMapper();
             User user = objectMapper.readValue(request, User.class);
             User findUser = userService.getUserByEmail(user);
-            cards = findUser.getCards().stream().filter(card -> card.isLeader()).collect(Collectors.toList());
+            cards = findUser.getCards().stream().filter(card -> !card.isLeader()).collect(Collectors.toList());
         } catch (Exception exception) {
             LOGGER.error("Error getting user card collection for deck");
             exception.printStackTrace();
