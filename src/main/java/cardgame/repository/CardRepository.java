@@ -1,6 +1,7 @@
 package cardgame.repository;
 
 import cardgame.bean.Card;
+import cardgame.bean.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -15,4 +16,6 @@ public interface CardRepository extends JpaRepository<Card, String> {
     List<Card> findCardsByGuids(@Param("cardGuids") String[] cardGuids);
 
     List<Card> findCardsByIsLeaderAndIsActive(boolean isLeader, boolean isActive);
+
+    List<Card> findCardByUserAndByIsLeader(User user, boolean leaderFlag);
 }

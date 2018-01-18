@@ -55,4 +55,21 @@ public class CollectionController {
         }
         return cards;
     }
+
+    @RequestMapping(value = "/userDeckCards", method = RequestMethod.POST)
+    public List<Card> enableUserCardsForDeck(@RequestBody String request) {
+        List<Card> cards = new ArrayList<>();
+        try {
+            request = new String(request.getBytes("UTF-8"));
+            ObjectMapper objectMapper = new ObjectMapper();
+            User user = objectMapper.readValue(request, User.class);
+            User findUser = userService.getUserByEmail(user);
+            cards = cardService.getCardListWithOutLeaders(findUser);
+        } catch (Exception exception) {
+            LOGGER.error("Error getting user card collection for deck");
+            exception.printStackTrace();
+        }
+        return cards;
+    }
+
 }

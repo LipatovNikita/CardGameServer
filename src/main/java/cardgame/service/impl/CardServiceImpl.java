@@ -2,6 +2,7 @@ package cardgame.service.impl;
 
 
 import cardgame.bean.Card;
+import cardgame.bean.User;
 import cardgame.repository.CardRepository;
 import cardgame.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,5 +60,10 @@ public class CardServiceImpl implements CardService {
             findCards.add(cardRepository.findOne(card.getId()));
         }
         return findCards;
+    }
+
+    @Override
+    public List<Card> getCardListWithOutLeaders(User user) {
+        return cardRepository.findCardByUserAndByIsLeader(user, false);
     }
 }
