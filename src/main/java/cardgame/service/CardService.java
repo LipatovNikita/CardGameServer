@@ -12,5 +12,4 @@ public interface CardService {
     List<Card> getCardList();
     Card getCardById(Card card);
     List<Card> getCardListFromDeck(List<Card> cards);
-    List<Card> getCardListWithOutLeaders(User user);
 }

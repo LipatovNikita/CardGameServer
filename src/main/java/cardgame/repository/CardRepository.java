@@ -17,5 +17,4 @@ public interface CardRepository extends JpaRepository<Card, String> {
 
     List<Card> findCardsByIsLeaderAndIsActive(boolean isLeader, boolean isActive);
 
-    List<Card> findCardByUserAndByIsLeader(User user, boolean leaderFlag);
 }

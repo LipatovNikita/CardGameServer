@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/collection")
@@ -64,7 +65,7 @@ public class CollectionController {
             ObjectMapper objectMapper = new ObjectMapper();
             User user = objectMapper.readValue(request, User.class);
             User findUser = userService.getUserByEmail(user);
-            cards = cardService.getCardListWithOutLeaders(findUser);
+            cards = findUser.getCards().stream().filter(card -> card.isLeader()).collect(Collectors.toList());
         } catch (Exception exception) {
             LOGGER.error("Error getting user card collection for deck");
             exception.printStackTrace();

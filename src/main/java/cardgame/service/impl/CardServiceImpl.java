@@ -61,9 +61,4 @@ public class CardServiceImpl implements CardService {
         }
         return findCards;
     }
-
-    @Override
-    public List<Card> getCardListWithOutLeaders(User user) {
-        return cardRepository.findCardByUserAndByIsLeader(user, false);
-    }
 }
